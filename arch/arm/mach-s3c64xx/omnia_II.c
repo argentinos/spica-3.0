@@ -256,7 +256,7 @@ static struct sec_headset_port sec_headset_port[] = {
 			.gpio_af	= GPIO_DET_35_AF  , 
 			.low_active 	= 0
 		},{ // SEND/END info
-#ifdef PHONE_B7610 
+#ifdef CONFIG_PHONE_B7610 
                         .eint           = IRQ_EINT(13),
                         .gpio           = GPIO_BOOT_EINT13,
                         .gpio_af        = GPIO_BOOT_EINT13_AF,
@@ -828,7 +828,7 @@ void s3c_setup_keypad_cfg_gpio(int rows, int columns)
 {
 	unsigned int gpio;
 	unsigned int end;
-#ifndef PHONE_B7610
+#ifndef CONFIG_PHONE_B7610
 	end = S3C64XX_GPK(8 + rows);
 
 	/* Set all the necessary GPK pins to special-function 0 */

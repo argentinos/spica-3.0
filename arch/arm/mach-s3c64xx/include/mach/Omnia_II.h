@@ -37,7 +37,7 @@
 #define GPIO_AP_FLM_RXD_AF	(2)
 #define GPIO_AP_FLM_TXD		S3C64XX_GPA(1)
 #define GPIO_AP_FLM_TXD_AF	(2)
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_BT_EN             S3C64XX_GPA(2)
 #define GPIO_BT_EN_AF          (1) // doublecheck signal seems inverte
 #define GPIO_VIB_EN             S3C64XX_GPA(3)
@@ -61,7 +61,7 @@
 #define GPIO_CAM_SCL_AF		(6)
 #define GPIO_CAM_SDA		S3C64XX_GPB(3)
 #define GPIO_CAM_SDA_AF		(6)
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_CAM_3M_nSTBY       S3C64XX_GPB(4)
 #define GPIO_CAM_3M_nSTBY_AF    (1)
 #else
@@ -76,7 +76,7 @@
 /* GPC Group */
 #define GPIO_TP10024		S3C64XX_GPC(0)
 #define GPIO_TP10024_AF		(1)
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_CAM_CIF_nRST       S3C64XX_GPC(1)
 #define GPIO_CAM_CIF_nRST_AF    (1)
 #define GPIO_MSENSE_RST         S3C64XX_GPC(3)
@@ -94,7 +94,7 @@
 /* GPD Group */
 #define GPIO_I2S_SCLK           S3C64XX_GPD(0)
 #define GPIO_I2S_SCLK_AF        (3)
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_CAM_CIF_nSTBY      S3C64XX_GPD(1)
 #define GPIO_CAM_CIF_nSTBY_AF   (1)
 #endif
@@ -106,7 +106,7 @@
 #define GPIO_I2S_SDO_AF         (3)
 
 /* GPE Group */
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_WLAN_nRST          S3C64XX_GPE(0)
 #define GPIO_WLAN_nRST_AF       (1)
 #else
@@ -115,7 +115,7 @@
 #endif
 #define GPIO_BOOT_MODE		S3C64XX_GPE(1)
 #define GPIO_BOOT_MODE_AF	(0)
-#ifndef PHONE_B7610
+#ifndef CONFIG_PHONE_B7610
 #define GPIO_WLAN_nRST		S3C64XX_GPE(2)
 #define GPIO_WLAN_nRST_AF	(1)
 #endif
@@ -248,7 +248,7 @@
 #define GPIO_TA_EN_AF		(1) 
 #define GPIO_AUDIO_EN           S3C64XX_GPK(1)
 #define GPIO_AUDIO_EN_AF        (1)
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_FLM_SEL            S3C64XX_GPK(2)
 #define GPIO_FLM_SEL_AF         (1)
 #else
@@ -261,7 +261,7 @@
 #define GPIO_UART_SEL_AF	(1)
 #define GPIO_FM_nRST            S3C64XX_GPK(5)
 #define GPIO_FM_nRST_AF         (1)
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_PHONE_ON           S3C64XX_GPK(6)//EC: from kern_oII. Is GPK(6). generates multiple keyscans if defined GP
 #define GPIO_PHONE_ON_AF        (1)
 #else
@@ -276,7 +276,7 @@
 #define GPIO_KBR1_AF            (3)
 #define GPIO_KBR2               S3C64XX_GPK(10)
 #define GPIO_KBR2_AF            (3)
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_KBR3               S3C64XX_GPK(11)
 #define GPIO_KBR3_AF            (3)
 #define GPIO_KBR4               S3C64XX_GPK(12)
@@ -305,7 +305,7 @@
 #define GPIO_KBC1_AF            (3)
 #define GPIO_KBC2               S3C64XX_GPL(2)
 #define GPIO_KBC2_AF            (3)
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_KBC3               S3C64XX_GPL(3)
 #define GPIO_KBC3_AF            (3)
 #define GPIO_KBC4               S3C64XX_GPL(4)
@@ -362,7 +362,7 @@
 #define GPIO_MSENSE_IRQ_AF	(2)
 #define GPIO_ACC_INT		S3C64XX_GPN(3)
 #define GPIO_ACC_INT_AF		(2)
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_BT_nRST            S3C64XX_GPN(4)
 #define GPIO_BT_nRST_AF         (1)
 #else
@@ -381,7 +381,7 @@
 #define GPIO_INTB_AF            (2)
 #define GPIO_DET_35		S3C64XX_GPN(10)
 #define GPIO_DET_35_AF		(2)
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_HALL_SW            S3C64XX_GPN(11)
 #define GPIO_HALL_SW_AF         (2) // check
 #else
@@ -417,7 +417,7 @@
 
 /* GPP Group */
 
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_USB_SEL            S3C64XX_GPP(5) //correct???
 #define GPIO_USB_SEL_AF         (1)
 #endif
@@ -426,7 +426,7 @@
 
 /* GPQ Group */
 
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_CAM_EN             S3C64XX_GPQ(5)
 #define GPIO_CAM_EN_AF          (1)
 #endif
@@ -558,7 +558,7 @@
 #define GPIO_KEYSCAN_0	GPIO_KBR0
 #define GPIO_KEYSCAN_1	GPIO_KBR1
 #define GPIO_KEYSCAN_2	GPIO_KBR2
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_KEYSCAN_3          GPIO_KBR3
 #define GPIO_KEYSCAN_4          GPIO_KBR4
 #define GPIO_KEYSCAN_5          GPIO_KBR5
@@ -570,7 +570,7 @@
 #define GPIO_KEYSENSE_0	GPIO_KBC0
 #define GPIO_KEYSENSE_1	GPIO_KBC1
 #define GPIO_KEYSENSE_2	GPIO_KBC2
-#ifdef PHONE_B7610
+#ifdef CONFIG_PHONE_B7610
 #define GPIO_KEYSENSE_3         GPIO_KBC3
 #define GPIO_KEYSENSE_4         GPIO_KBC4
 #define GPIO_KEYSENSE_5         GPIO_KBC5
