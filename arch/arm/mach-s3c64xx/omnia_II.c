@@ -73,7 +73,7 @@
 //#include <plat/media.h>
 #include <plat/gpio-cfg.h>
 #include <linux/android_pmem.h>
-#include <linux/i2c/pmic.h>
+#include <linux/i2c/max8698.h>
 #include <mach/regs-gpio.h>
 #include <mach/regs-gpio-memport.h>
 #include <mach/system.h>
@@ -272,7 +272,8 @@ static struct sec_headset_port sec_headset_port[] = {
                         .gpio           = GPIO_EAR_SEND_END,
                         .gpio_af        = GPIO_EAR_SEND_END_AF,
                         .low_active     = 1
-#endif		}
+#endif
+		}
         }
 };
  
