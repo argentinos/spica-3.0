@@ -256,11 +256,23 @@ static struct sec_headset_port sec_headset_port[] = {
 			.gpio_af	= GPIO_DET_35_AF  , 
 			.low_active 	= 0
 		},{ // SEND/END info
-			.eint		= IRQ_EINT(11), 
-			.gpio		= GPIO_EAR_SEND_END, 
-			.gpio_af	= GPIO_EAR_SEND_END_AF, 
-			.low_active	= 1
-		}
+#ifdef PHONE_B7610 
+                        .eint           = IRQ_EINT(13),
+                        .gpio           = GPIO_BOOT_EINT13,
+                        .gpio_af        = GPIO_BOOT_EINT13_AF,
+                        .low_active     = 1
+
+//                      .eint           = IRQ_EINT(11),  
+//                      .gpio           = GPIO_HALL_SW,  
+//                      .gpio_af        = GPIO_HALL_SW_AF,  
+//                      .low_active     = 1 
+
+#else
+                        .eint           = IRQ_EINT(11),
+                        .gpio           = GPIO_EAR_SEND_END,
+                        .gpio_af        = GPIO_EAR_SEND_END_AF,
+                        .low_active     = 1
+#endif		}
         }
 };
  
@@ -816,7 +828,7 @@ void s3c_setup_keypad_cfg_gpio(int rows, int columns)
 {
 	unsigned int gpio;
 	unsigned int end;
-
+#ifndef PHONE_B7610
 	end = S3C64XX_GPK(8 + rows);
 
 	/* Set all the necessary GPK pins to special-function 0 */
@@ -832,6 +844,7 @@ void s3c_setup_keypad_cfg_gpio(int rows, int columns)
 		s3c_gpio_cfgpin(gpio, S3C_GPIO_SFN(3));
 		s3c_gpio_setpull(gpio, S3C_GPIO_PULL_NONE);
 	}
+#endif
 }
 
 EXPORT_SYMBOL(s3c_setup_keypad_cfg_gpio);
